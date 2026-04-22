@@ -35,10 +35,18 @@ gns3/
 
 ## 手順
 
-### 1. GNS3サーバの起動
+### 1. リポジトリのクローン
 
 ```bash
-cd C:\Users\kshinjo\work\gns3
+git clone <このリポジトリのURL>
+cd gns3
+```
+
+### 2. GNS3サーバの起動
+
+リポジトリのルートディレクトリで以下を実行する:
+
+```bash
 docker compose up -d
 ```
 
@@ -48,11 +56,11 @@ docker compose up -d
 docker compose down
 ```
 
-### 2. GNS3 GUI のインストール
+### 3. GNS3 GUI のインストール
 
 gns3.com から Windows用 All-in-one インストーラをダウンロードしてインストールする。
 
-### 3. GNS3 GUI の初期設定
+### 4. GNS3 GUI の初期設定
 
 初回起動時のセットアップウィザードで以下を設定する:
 
@@ -61,14 +69,6 @@ gns3.com から Windows用 All-in-one インストーラをダウンロードし
 - Port: `3080`
 - Enable authentication: **チェックしない**
 
-### 4. IOSイメージの登録
-
-GNS3 GUI から以下の手順で3機種を登録する:
-
-1. Edit → Preferences → Dynamips → IOS routers → New
-2. IOSイメージファイルを指定 (コンテナ内パス: `/root/GNS3/images/IOS/`)
-3. idlePC値を計算して設定
-
 ## 対応IOSイメージ
 
 | モデル | ファイル名 |
@@ -76,6 +76,15 @@ GNS3 GUI から以下の手順で3機種を登録する:
 | c3725 | c3725-adventerprisek9-mz124-15.bin |
 | c3745 | c3745-advipservicesk9-mz.124-25d.bin |
 | c7200 | c7200-advipservicesk9-mz.152-4.S5.bin |
+
+## ルータを追加・変更する場合
+
+新しいIOSイメージを登録する場合は、GNS3 GUI から以下の手順で設定する:
+
+1. `ios-images/` ディレクトリにIOSイメージファイルを配置する
+2. Edit → Preferences → Dynamips → IOS routers → New
+3. IOSイメージファイルを指定 (コンテナ内パス: `/root/GNS3/images/IOS/`)
+4. idlePC値を計算して設定
 
 ## 備考
 
