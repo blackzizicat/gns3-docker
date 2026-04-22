@@ -5,6 +5,7 @@ services:
     privileged: true
     ports:
       - "3080:3080"
+      - "5000-5100:5000-5100"
     volumes:
       - ./ios-images:/root/GNS3/images/IOS
       - ./gns3-data:/root/GNS3
