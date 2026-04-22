@@ -38,7 +38,7 @@ gns3/
 ### 1. リポジトリのクローン
 
 ```bash
-git clone <このリポジトリのURL>
+git clone https://github.com/blackzizicat/gns3-docker.git
 cd gns3
 ```
 
